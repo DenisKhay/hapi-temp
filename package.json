@@ -1,0 +1,24 @@
+{
+  "name": "hapi-temp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenisKhay/hapi-temp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenisKhay/hapi-temp/issues"
+  },
+  "homepage": "https://github.com/DenisKhay/hapi-temp#readme",
+  "dependencies": {
+    "hapi": "^17.6.0",
+    "nodemon": "^1.18.5"
+  }
+}
