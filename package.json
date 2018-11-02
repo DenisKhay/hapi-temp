@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/DenisKhay/hapi-temp#readme",
   "dependencies": {
+    "apollo-server-hapi": "^2.1.0",
+    "graphql": "^14.0.2",
     "hapi": "17.6.0",
     "inert": "5.1.0",
     "mongoose": "5.3.8",
