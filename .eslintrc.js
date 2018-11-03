@@ -25,6 +25,7 @@ module.exports = {
             "always"
         ],
         "no-unused-vars": 1,
-        "no-console": 1
+        "no-console": 1,
+        "object-curly-spacing": ["error", "always", {"objectsInObjects": false, "arraysInObjects": false}]
     }
 };

@@ -47,7 +47,7 @@ const init = async () => {
 init();
 
 
-mongoose.connect(DB_URL, {useNewUrlParser: true});
+mongoose.connect(DB_URL, { useNewUrlParser: true });
 mongoose.connection.once('open', (...args) => {
     console.log('connected to db', args);
 });

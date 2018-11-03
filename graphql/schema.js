@@ -11,7 +11,7 @@ const RootQuery = new GraphQLObjectType({
     fields: {
         painting: {
             type: PaintingType,
-            args: {id: {type: GraphQLString}},
+            args: { id: { type: GraphQLString }},
             resolve(parents, args){
 
             }
