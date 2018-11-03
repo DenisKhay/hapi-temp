@@ -1,6 +1,10 @@
 const hapi = require('hapi');
 const mongoose = require('mongoose');
 const Painting = require('./models/Painting');
+const { graphqlHapi, graphiqlHapi } = require('apollo-server-hapi');
+const schema = require('./graphql/schema');
+
+
 const DB_URL = 'mongodb://localhost:27017/test-db';
 
 const server = hapi.server({
@@ -9,6 +13,33 @@ const server = hapi.server({
 });
 
 const init = async () => {
+
+
+    await server.register({
+        plugin: graphqlHapi,
+        options: {
+            path: '/graphql',
+            graphqlOptions: {
+                schema
+            },
+            route: {
+                cors: true
+            }
+        }
+    });
+
+    await server.register({
+        plugin: graphiqlHapi,
+        options: {
+            path: '/graphiql',
+            graphiqlOptions: {
+                endpointURL: '/graphql'
+            },
+            route: {
+                cors: true
+            }
+        }
+    });
 
     server.route([
         {
@@ -21,14 +52,14 @@ const init = async () => {
         {
             method: 'GET',
             path: '/api/v1/paintings',
-            handler (request, reply) {
+            handler(request, reply) {
                 return Painting.find();
             }
         },
         {
             method: 'POST',
             path: '/api/v1/paintings',
-            handler(request, reply){
+            handler(request, reply) {
                 const { name, url, techniques } = request.payload;
                 const painting = new Painting({
                     name,
