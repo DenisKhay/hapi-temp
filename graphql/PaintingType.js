@@ -9,7 +9,7 @@ const PaintingType = new GraphQLObjectType({
             name: { type: GraphQLString },
             url: { type: GraphQLString },
             techniques: { type: GraphQLString }
-        }
+        };
     }
 });
 

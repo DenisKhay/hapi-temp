@@ -1,7 +1,7 @@
 const hapi = require('hapi');
 const mongoose = require('mongoose');
 const Painting = require('./models/Painting');
-const DB_URL = `mongodb://localhost:27017/test-db`;
+const DB_URL = 'mongodb://localhost:27017/test-db';
 
 const server = hapi.server({
     port: 4000,
@@ -15,7 +15,7 @@ const init = async () => {
             method: 'GET',
             path: '/',
             handler(request, reply) {
-                return `<h1>My modern hapi server</h1>`
+                return `<h1>My modern hapi server</h1>`;
             }
         },
         {
